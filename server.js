@@ -1,14 +1,18 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
+const app = express();
+const cors = require("cors"); // Import cors
+// Enable CORS for all routes
+app.use(cors());
 require("dotenv").config();
 
-const app = express();
 app.use(express.json());
 
 // MongoDB connection
 // const mongoURI = "mongodb+srv://adarshraut493:Aadarsh%4012345@cluster0.yalle.mongodb.net/E-learning?retryWrites=true&w=majority&appName=Cluster0";
-const mongoURI = "mongodb+srv://amanmotghare2024:GnxhBuWlhAGrA1F8@inotebook-assessment.bcu40.mongodb.net/quizApp?retryWrites=true&w=majority";
+// const mongoURI = "mongodb+srv://amanmotghare2024:GnxhBuWlhAGrA1F8@inotebook-assessment.bcu40.mongodb.net/quizApp?retryWrites=true&w=majority";
+const mongoURI =  "mongodb://localhost:27017/quiz"
 
 const connectToMongo = async () => {
   try {
